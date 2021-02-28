@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@material-ui/core'
 
-interface IProps {}
+// interface IProps {}
 
 interface ICardProps {}
 
@@ -30,6 +30,7 @@ const Index: FC = () => {
 }
 
 const ItemCard: FC<ICardProps> = (props) => {
+  console.log(props)
   return (
     <Grid item xs={12} sm={3}>
       <Card>
