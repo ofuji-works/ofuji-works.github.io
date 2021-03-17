@@ -1,67 +1,36 @@
-import { FC, useState, useEffect } from 'react'
-import {
-  Container,
-  Grid,
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Typography,
-  Fade,
-} from '@material-ui/core'
+import React from 'react'
 
-// interface IProps {}
-
-interface ICardProps {
-  timeout: number
-}
-
-const Index: FC = () => {
-  const items: number[] = [1, 2, 3, 4, 5, 6, 7, 8]
-
-  const Items = items.map((item, i) => {
-    return <ItemCard key={`${item}-id`} timeout={500 + 300 * i} {...item} />
-  })
-
-  return (
-    <Container maxWidth="lg">
-      <Grid container spacing={3}>
-        {Items}
-      </Grid>
-    </Container>
-  )
-}
-
-const ItemCard: FC<ICardProps> = (props) => {
-  const [mount, setMount] = useState(false)
-
-  useEffect(() => {
-    setMount(true)
-  }, [])
-
-  console.log(props)
+const Index: React.FC = () => {
   return (
     <>
-      <Fade in={mount} timeout={props.timeout}>
-        <Grid item xs={12} sm={3}>
-          <Card>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                alt="app"
-                height="150"
-                image="/images/sample.jpg"
-              />
-              <CardContent>
-                <Typography component="h2">App Title</Typography>
-                <Typography variant="body2" component="p" color="textSecondary">
-                  app's description space
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-      </Fade>
+      <div className="title-block">
+        <h3>ofuji.works</h3>
+        <p>Front-end developer</p>
+      </div>
+      <style jsx>{`
+        .title-block {
+          padding: 20px 30px;
+        }
+        .title-block h3 {
+          margin-left: -5px;
+          font-size: 5vh;
+          margin: 0;
+          color: #707070;
+        }
+        .title-block p {
+          font-size: 1vh;
+          letter-spacing: 10px;
+          margin: 0;
+          color: #707070;
+        }
+        @media screen and (max-width: 896px) {
+          .title-block {
+            padding: 0;
+            text-align: center;
+            margin-top: 40vh;
+          }
+        }
+      `}</style>
     </>
   )
 }
