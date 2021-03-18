@@ -38,20 +38,32 @@ const LeafSVG: React.FC<IProps> = (props) => {
         </g>
       </svg>
       <style jsx>{`
-        @keyframes dash {
-          to {
+        @keyframes leaf {
+          80% {
+            stroke-dashoffset: 0;
+          }
+          100% {
             stroke-dashoffset: 0;
           }
         }
+        @keyframes branch {
+          80% {
+            stroke-dashoffset: 0;
+          }
+          100% {
+            stroke-dashoffset: 0;
+          }
+        }
+
         #branch {
           stroke-dasharray: 200;
           stroke-dashoffset: 200;
-          animation: dash 1s linear forwards;
+          animation: branch 1s ease-out forwards;
         }
         #leaf {
           stroke-dasharray: 200;
           stroke-dashoffset: 200;
-          animation: dash 1s linear forwards;
+          animation: leaf 2s ease-out forwards;
         }
       `}</style>
     </>
