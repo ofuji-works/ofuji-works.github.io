@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Grid } from '@material-ui/core'
 import Link from 'next/link'
-import LeafSVG from '../components/LeafSVG'
+import LeafSVG from './svg/LeafSVG'
 
 interface ILinkComponentProps {
   text: string
@@ -34,6 +34,9 @@ const LinkComponent: React.FC<ILinkComponentProps> = (props) => {
           margin: 0 30px;
           font-size: 2vh;
         }
+        .link-text:hover {
+          opacity: 0.5;
+        }
         .selected-icon {
           height: 20px;
           width: 20px;
@@ -49,8 +52,8 @@ const LinkProps = [
     href: '/',
   },
   {
-    text: 'Works',
-    href: '/',
+    text: 'Collection',
+    href: '/collection',
   },
   {
     text: 'About',
