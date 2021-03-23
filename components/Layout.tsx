@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Grid } from '@material-ui/core'
 import Link from 'next/link'
 import LeafSVG from './svg/LeafSVG'
+import Model from '../components/3D'
 
 interface ILinkComponentProps {
   text: string
@@ -79,6 +80,7 @@ const Layout: React.FC = (props) => {
 
   return (
     <>
+      <Model />
       {props.children}
       <div className="menu-block">
         <Grid container justify="center">
@@ -88,8 +90,11 @@ const Layout: React.FC = (props) => {
       <style jsx>{`
         .menu-block {
           width: 100%;
+          position: fixed;
+          bottom: 10vh;
+        }
+        .main-wrapper {
           position: absolute;
-          bottom: 15vh;
         }
       `}</style>
     </>
