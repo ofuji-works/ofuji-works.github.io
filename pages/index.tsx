@@ -10,6 +10,7 @@ const Index: React.FC = () => {
       <style jsx>{`
         .title-block {
           padding: 20px 30px;
+          position: fixed;
         }
         .title-block h3 {
           margin-left: -5px;
@@ -25,8 +26,8 @@ const Index: React.FC = () => {
         }
         @media screen and (max-width: 896px) {
           .title-block {
-            padding: 0;
-            text-align: center;
+            padding: 0 30px;
+            text-align: left;
             margin-top: 40vh;
           }
         }
