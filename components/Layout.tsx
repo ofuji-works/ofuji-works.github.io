@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { Grid } from '@material-ui/core'
 import Link from 'next/link'
-import LeafSVG from './svg/LeafSVG'
 import Model from '../components/3D'
 
 interface ILinkComponentProps {
@@ -13,13 +11,10 @@ interface ILinkComponentProps {
 const LinkComponent: React.FC<ILinkComponentProps> = (props) => {
   return (
     <>
-      <Grid item>
-        <div className="selected-icon">
-          {props.active ? <LeafSVG height={20} width={20} /> : ''}
-        </div>
+      <div className={props.active ? 'linkBlock current' : 'linkBlock'}>
         <Link href={props.href}>
           <a
-            className="link-text"
+            className={props.active ? 'linkText current' : 'linkText'}
             onClick={() => {
               props.setActive()
             }}
@@ -27,20 +22,30 @@ const LinkComponent: React.FC<ILinkComponentProps> = (props) => {
             {props.text}
           </a>
         </Link>
-      </Grid>
+      </div>
       <style jsx>{`
-        .link-text {
-          text-decoration: none;
-          color: #707070;
-          margin: 0 30px;
-          font-size: 2vh;
+        .linkBlock {
+          padding: 20px 5px;
+          color: #000000;
         }
-        .link-text:hover {
+        .linkText {
+          text-decoration: none;
+          color: #000000;
+          font-size: 2vh;
+          display: block;
+          text-orientation: sideways;
+        }
+        .linkText:hover {
           opacity: 0.5;
         }
-        .selected-icon {
-          height: 20px;
-          width: 20px;
+        .current {
+          background-color: #000000;
+          color: #ffffff;
+        }
+        @media screen and (max-width: 896px) {
+          .linkText:hover {
+            opacity: 1;
+          }
         }
       `}</style>
     </>
@@ -82,19 +87,14 @@ const Layout: React.FC = (props) => {
     <>
       <Model />
       {props.children}
-      <div className="menu-block">
-        <Grid container justify="center">
-          {Links}
-        </Grid>
-      </div>
+      <div className="menu-block">{Links}</div>
       <style jsx>{`
         .menu-block {
-          width: 100%;
+          writing-mode: vertical-rl;
+          display: flex;
           position: fixed;
-          bottom: 10vh;
-        }
-        .main-wrapper {
-          position: absolute;
+          top: 30%;
+          right: 0;
         }
       `}</style>
     </>

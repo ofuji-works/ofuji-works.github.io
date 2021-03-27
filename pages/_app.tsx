@@ -7,6 +7,9 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import 'sanitize.css'
 import 'sanitize.css/forms.css'
 import 'sanitize.css/typography.css'
+import '../styles/global.css'
+import 'fontsource-roboto'
+
 import Layout from '../components/Layout'
 
 const theme = createMuiTheme({})
@@ -36,7 +39,6 @@ export default function MyApp(props: AppProps) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Layout>
           <Component {...pageProps} />
