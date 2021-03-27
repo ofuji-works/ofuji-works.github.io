@@ -49,7 +49,7 @@ const Card: React.VFC = () => {
 
 const Index: React.VFC = () => {
   const Contents = content.map((ele, index) => {
-    return <Card key={`index-${index}`} />
+    return <Card key={`index-${index}-${ele.title}`} />
   })
 
   return (
