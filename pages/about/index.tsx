@@ -63,7 +63,7 @@ const Index: React.FC = () => {
             color: #707070;
           }
           .profile-block p {
-            font-size: 1px;
+            font-size: 10px;
             text-align: center;
             margin: 0;
             color: #707070;
@@ -89,6 +89,7 @@ const Index: React.FC = () => {
             }
             .profile-block p {
               text-align: left;
+              font-size: 10px;
               margin: 0;
               color: #707070;
               letter-spacing: 5px;
