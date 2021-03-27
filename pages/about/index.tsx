@@ -39,6 +39,17 @@ const Index: React.FC = () => {
               <p>Front-end developer</p>
               <p>Based in Hyogo</p>
             </div>
+            <div className="descriptionBlock">
+              <p>
+                神戸Sier企業に所属。
+                <br />
+                3Dグラフィックモーションに興味を持ち、
+                <br />
+                WebGLを学習しています。
+                <br />
+                React / typescriptでの開発がお気に入りです。
+              </p>
+            </div>
             <div className="sns-block">
               <div className="git-hub">
                 <a href="https://github.com/ofuji-works" target="_brank">
@@ -59,15 +70,22 @@ const Index: React.FC = () => {
           .profile-block h3 {
             text-align: center;
             margin: 0 auto;
-            font-size: 5vh;
-            color: #707070;
+            font-size: 8vh;
+            color: #000000;
           }
           .profile-block p {
-            font-size: 10px;
+            font-size: 1vh;
             text-align: center;
             margin: 0;
-            color: #707070;
+            color: #000000;
             letter-spacing: 10px;
+          }
+          .descriptionBlock {
+            margin-top: 20px;
+          }
+          .descriptionBlock p {
+            text-align: center;
+            font-size: 2vh;
           }
           .sns-block {
             display: flex;
@@ -84,15 +102,24 @@ const Index: React.FC = () => {
             .profile-block h3 {
               text-align: left;
               margin: 0;
+              margin-left: -5px;
               font-size: 5vh;
-              color: #707070;
+              color: #000000;
             }
             .profile-block p {
               text-align: left;
-              font-size: 10px;
+              font-size: 1vh;
               margin: 0;
-              color: #707070;
+              color: #000000;
               letter-spacing: 5px;
+            }
+            .descriptionBlock {
+              margin-top: 20px;
+              margin-left: 20px;
+            }
+            .descriptionBlock p {
+              text-align: left;
+              font-size: 10px;
             }
             .sns-block {
               display: flex;
