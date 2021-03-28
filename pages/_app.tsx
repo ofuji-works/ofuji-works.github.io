@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
+import { AnimatePresence } from 'framer-motion'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import 'sanitize.css'
@@ -40,9 +41,11 @@ export default function MyApp(props: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <AnimatePresence exitBeforeEnter>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </AnimatePresence>
       </ThemeProvider>
     </React.Fragment>
   )

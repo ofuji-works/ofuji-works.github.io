@@ -35,11 +35,11 @@ const Index: React.FC = () => {
         <Grid item className={classes.item} xs={11} md={6}>
           <div className="content">
             <div className="profile-block">
-              <h3>Yuta Okafuji</h3>
+              <h3 className="fadeIn">Yuta Okafuji</h3>
               <p>Front-end developer</p>
               <p>Based in Hyogo</p>
             </div>
-            <div className="descriptionBlock">
+            <div className="descriptionBlock fadeInDescriptionBlock">
               <p>
                 神戸Sier企業に所属。
                 <br />
@@ -73,12 +73,33 @@ const Index: React.FC = () => {
             font-size: 8vh;
             color: #000000;
           }
+          .fadeIn {
+            animation: fadeIn 1s forwards;
+          }
+          .fadeInDescriptionBlock {
+            animation: fadeIn 3s forwards;
+          }
+          .type {
+            animation: type 3s forwards;
+            animation-delay: 3s;
+          }
+          @keyframes fadeIn {
+            0% {
+              opacity: 0;
+              transform: translateY(50%);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0%);
+            }
+          }
           .profile-block p {
             font-size: 1vh;
             text-align: center;
             margin: 0;
             color: #000000;
             letter-spacing: 10px;
+            animation: fadeIn 2s forwards;
           }
           .descriptionBlock {
             margin-top: 20px;

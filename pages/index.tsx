@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Index: React.FC = () => {
+  const [apply, setApply] = useState<boolean>(false)
+
+  useEffect(() => {
+    setApply(true)
+    return () => {
+      setApply(false)
+    }
+  }, [])
+
   return (
     <>
       <div className="title-block">
-        <h3 className="glitch">ofuji.works</h3>
+        <h3 className={apply ? 'glitch fadeIn' : ''}>ofuji.works</h3>
         <p className="type">Front-end developer</p>
       </div>
       <style jsx>{`
@@ -43,6 +52,9 @@ const Index: React.FC = () => {
         }
         .type {
           animation: type 4s steps(38) infinite;
+        }
+        .fadeIn {
+          animation: fadeIn 1s forwards;
         }
         @keyframes flash {
           0% {
@@ -96,6 +108,16 @@ const Index: React.FC = () => {
         @keyframes type {
           from {
             width: 0;
+          }
+        }
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(50%);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0%);
           }
         }
       `}</style>
