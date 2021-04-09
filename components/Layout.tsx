@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Link from 'next/link'
 import Model from '../components/3D'
 
 interface ILinkComponentProps {
@@ -12,16 +11,15 @@ const LinkComponent: React.FC<ILinkComponentProps> = (props) => {
   return (
     <>
       <div className={props.active ? 'linkBlock current' : 'linkBlock'}>
-        <Link href={props.href}>
-          <a
-            className={props.active ? 'linkText current' : 'linkText'}
-            onClick={() => {
-              props.setActive()
-            }}
-          >
-            {props.text}
-          </a>
-        </Link>
+        <a
+          href={props.href}
+          className={props.active ? 'linkText current' : 'linkText'}
+          onClick={() => {
+            props.setActive()
+          }}
+        >
+          {props.text}
+        </a>
       </div>
       <style jsx>{`
         .linkBlock {
@@ -55,15 +53,15 @@ const LinkComponent: React.FC<ILinkComponentProps> = (props) => {
 const LinkProps = [
   {
     text: 'Top',
-    href: '/',
+    href: '#top',
   },
   {
     text: 'Collection',
-    href: '/collection',
+    href: '#collection',
   },
   {
     text: 'About',
-    href: '/about',
+    href: '#about',
   },
 ]
 
@@ -86,7 +84,7 @@ const Layout: React.FC = (props) => {
   return (
     <>
       <Model />
-      {props.children}
+      <div id="main">{props.children}</div>
       <div className="menu-block">{Links}</div>
       <style jsx>{`
         .menu-block {
@@ -95,6 +93,9 @@ const Layout: React.FC = (props) => {
           position: fixed;
           top: 30%;
           right: 0;
+        }
+        .main {
+          position: absolute;
         }
       `}</style>
     </>

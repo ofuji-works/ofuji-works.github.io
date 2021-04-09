@@ -1,19 +1,11 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import SNSIcon from '../../components/svg/SNSIcon'
+import SNSIcon from './svg/SNSIcon'
 
 const useStyles = makeStyles({
   main: {
-    position: 'fixed',
     height: '100vh',
-  },
-  item: {
-    // background: 'rgba(255, 255, 255, 0.25)',
-    // boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-    // backdropFilter: 'blur(4px)',
-    // borderRadius: '10px',
-    // border: '1px solid rgba(255, 255, 255, 0.18)',
   },
   cardMain: {
     minHeight: 'inherit',
@@ -32,7 +24,7 @@ const Index: React.FC = () => {
         alignContent="center"
         className={classes.main}
       >
-        <Grid item className={classes.item} xs={11} md={6}>
+        <Grid item xs={11} md={6}>
           <div className="content">
             <div className="profile-block">
               <h3 className="fadeIn">Yuta Okafuji</h3>
