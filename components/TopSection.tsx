@@ -26,7 +26,7 @@ const Index: React.FC = () => {
         .title-block {
           position: absolute;
           top: 40vh;
-          left: 100px;
+          left: 15vw;
         }
         .title-block h3 {
           font-size: 8vh;
@@ -44,7 +44,7 @@ const Index: React.FC = () => {
         }
         @media screen and (max-width: 896px) {
           .title-block {
-            left: 30px;
+            left: 10vw;
             text-align: left;
           }
           .title-block h3 {

@@ -19,6 +19,7 @@ const Index: React.FC = () => {
           height: 100vh;
           width: 100%;
           scroll-snap-type: y;
+          scroll-snap-stop: always;
           overflow: scroll;
           -ms-overflow-style: none;
           scrollbar-width: none;

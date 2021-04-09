@@ -1,67 +1,56 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
 import SNSIcon from './svg/SNSIcon'
 
-const useStyles = makeStyles({
-  main: {
-    height: '100vh',
-  },
-  cardMain: {
-    minHeight: 'inherit',
-  },
-})
-
 const Index: React.FC = () => {
-  const classes = useStyles()
-
   return (
     <>
-      <Grid
-        container
-        justify="center"
-        direction="row"
-        alignContent="center"
-        className={classes.main}
-      >
-        <Grid item xs={11} md={6}>
-          <div className="content">
-            <div className="profile-block">
-              <h3 className="fadeIn">Yuta Okafuji</h3>
-              <p>Front-end developer</p>
-              <p>Based in Hyogo</p>
+      <div className="container">
+        <div className="content">
+          <div className="profile-block">
+            <h3 className="fadeIn">Yuta Okafuji</h3>
+            <p>Front-end developer</p>
+            <p>Based in Hyogo</p>
+          </div>
+          <div className="descriptionBlock fadeInDescriptionBlock">
+            <p>
+              神戸Sier企業に所属。
+              <br />
+              3Dモーショングラフィックスに興味を持ち、
+              <br />
+              WebGLを学習しています。
+              <br />
+              React / typescriptでの開発がお気に入りです。
+            </p>
+          </div>
+          <div className="sns-block">
+            <div className="git-hub">
+              <a href="https://github.com/ofuji-works" target="_brank">
+                <SNSIcon height={50} width={50} name="github" />
+              </a>
             </div>
-            <div className="descriptionBlock fadeInDescriptionBlock">
-              <p>
-                神戸Sier企業に所属。
-                <br />
-                3Dモーショングラフィックスに興味を持ち、
-                <br />
-                WebGLを学習しています。
-                <br />
-                React / typescriptでの開発がお気に入りです。
-              </p>
-            </div>
-            <div className="sns-block">
-              <div className="git-hub">
-                <a href="https://github.com/ofuji-works" target="_brank">
-                  <SNSIcon height={50} width={50} name="github" />
-                </a>
-              </div>
-              <div className="twitter sns">
-                <a href="https://twitter.com/yuta66510630" target="_brank">
-                  <SNSIcon height={50} width={50} name="twitter" />
-                </a>
-              </div>
+            <div className="twitter sns">
+              <a href="https://twitter.com/yuta66510630" target="_brank">
+                <SNSIcon height={50} width={50} name="twitter" />
+              </a>
             </div>
           </div>
-        </Grid>
-      </Grid>
+        </div>
+      </div>
       <style jsx>
         {`
+          .container {
+            position: relative;
+            height: 100vh;
+          }
+          .content {
+            position: absolute;
+            top: 35vh;
+            left: 15vw;
+          }
           .profile-block h3 {
-            text-align: center;
-            margin: 0 auto;
+            text-align: left;
+            margin: 0;
+            margin-left: -5px;
             font-size: 8vh;
             color: #000000;
           }
@@ -87,7 +76,7 @@ const Index: React.FC = () => {
           }
           .profile-block p {
             font-size: 1vh;
-            text-align: center;
+            text-align: left;
             margin: 0;
             color: #000000;
             letter-spacing: 10px;
@@ -97,20 +86,19 @@ const Index: React.FC = () => {
             margin-top: 20px;
           }
           .descriptionBlock p {
-            text-align: center;
-            font-size: 2vh;
+            text-align: left;
+            font-size: 1.5vh;
           }
           .sns-block {
             display: flex;
-            justify-content: center;
             margin: 20px 0;
           }
           .sns-block a {
             margin: 0 5px;
           }
           @media screen and (max-width: 896px) {
-            .profile-block {
-              margin-left: 20px;
+            .content {
+              left: 10vw;
             }
             .profile-block h3 {
               text-align: left;
@@ -128,7 +116,6 @@ const Index: React.FC = () => {
             }
             .descriptionBlock {
               margin-top: 20px;
-              margin-left: 20px;
             }
             .descriptionBlock p {
               text-align: left;
@@ -138,7 +125,7 @@ const Index: React.FC = () => {
               display: flex;
               align-content: center;
               justify-content: left;
-              margin: 20px 0 20px 20px;
+              margin: 20px 0 20px 0;
             }
           }
         `}
