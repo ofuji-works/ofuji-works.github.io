@@ -84,7 +84,7 @@ const Layout: React.FC = (props) => {
   return (
     <>
       <Model />
-      <div id="main">{props.children}</div>
+      {props.children}
       <div className="menu-block">{Links}</div>
       <style jsx>{`
         .menu-block {
@@ -93,9 +93,6 @@ const Layout: React.FC = (props) => {
           position: fixed;
           top: 30%;
           right: 0;
-        }
-        .main {
-          position: absolute;
         }
       `}</style>
     </>

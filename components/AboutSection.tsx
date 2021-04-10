@@ -5,7 +5,7 @@ const Index: React.FC = () => {
   return (
     <>
       <div className="container">
-        <div className="content">
+        <div className="profile-content">
           <div className="profile-block">
             <h3 className="fadeIn">Yuta Okafuji</h3>
             <p>Front-end developer</p>
@@ -42,10 +42,11 @@ const Index: React.FC = () => {
             position: relative;
             height: 100vh;
           }
-          .content {
+          .profile-content {
             position: absolute;
-            top: 35vh;
+            top: calc(35vh + 100px);
             left: 15vw;
+            opacity: 0;
           }
           .profile-block h3 {
             text-align: left;
@@ -53,26 +54,6 @@ const Index: React.FC = () => {
             margin-left: -5px;
             font-size: 8vh;
             color: #000000;
-          }
-          .fadeIn {
-            animation: fadeIn 1s forwards;
-          }
-          .fadeInDescriptionBlock {
-            animation: fadeIn 3s forwards;
-          }
-          .type {
-            animation: type 3s forwards;
-            animation-delay: 3s;
-          }
-          @keyframes fadeIn {
-            0% {
-              opacity: 0;
-              transform: translateY(50%);
-            }
-            100% {
-              opacity: 1;
-              transform: translateY(0%);
-            }
           }
           .profile-block p {
             font-size: 1vh;
@@ -97,7 +78,7 @@ const Index: React.FC = () => {
             margin: 0 5px;
           }
           @media screen and (max-width: 896px) {
-            .content {
+            .profile-content {
               left: 10vw;
             }
             .profile-block h3 {

@@ -12,21 +12,22 @@ const Index: React.FC = () => {
 
   return (
     <>
-      <div className="content">
+      <div className="container">
         <div className="title-block">
           <h3 className={apply ? 'glitch fadeIn' : ''}>ofuji.works</h3>
           <p className="type">Front-end developer</p>
         </div>
       </div>
       <style jsx>{`
-        .content {
+        .container {
           height: 100vh;
           position: relative;
         }
         .title-block {
           position: absolute;
-          top: 40vh;
+          top: calc(40vh - 100px);
           left: 15vw;
+          opacity: 0;
         }
         .title-block h3 {
           font-size: 8vh;
@@ -56,9 +57,6 @@ const Index: React.FC = () => {
         }
         .type {
           animation: type 4s steps(38) infinite;
-        }
-        .fadeIn {
-          animation: fadeIn 1s forwards;
         }
         @keyframes flash {
           0% {
@@ -112,16 +110,6 @@ const Index: React.FC = () => {
         @keyframes type {
           from {
             width: 0;
-          }
-        }
-        @keyframes fadeIn {
-          0% {
-            opacity: 0;
-            transform: translateY(50%);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0%);
           }
         }
       `}</style>
