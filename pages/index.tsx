@@ -14,7 +14,7 @@ const Index: React.FC = () => {
       scrollTrigger: {
         trigger: '#top',
         toggleActions: 'play complelte restart reverse',
-        markers: true,
+        // markers: true,
       },
       opacity: 1,
       y: +100,
@@ -24,7 +24,7 @@ const Index: React.FC = () => {
       scrollTrigger: {
         trigger: '#about',
         toggleActions: 'restart none restart none',
-        markers: true,
+        // markers: true,
       },
       opacity: 1,
       y: -100,
